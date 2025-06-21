@@ -29,37 +29,60 @@
     
     <div id="page" class="site">
         <!-- Header Section -->
-        <header id="site-header" class="header">
-            <div class="container">
-                <div class="header__container">
-                    <a href="index.html" class="logo" aria-label="HappiMinds Home">
-                        <img src="images/happiminds-logo.svg" alt="HappiMinds" width="180" height="60" loading="eager">
-                        <span class="logo-mascot">😊</span>
-                    </a>
+<header id="site-header" class="header">
+    <div class="container">
+        <div class="header__container">
+            <a href="index.html" class="logo" aria-label="HappiMinds Home">
+                <img src="images/happiminds-logo.svg" alt="HappiMinds" width="180" height="60" loading="eager">
+                <span class="logo-mascot">😊</span>
+            </a>
+            
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link active">Home</a></li>
                     
-                    <nav class="nav" aria-label="Main navigation">
-                        <ul class="nav__list">
-                            <li><a href="index.html" class="nav__link active">Home</a></li>
-                            <li><a href="programs.html" class="nav__link">Programs</a></li>
-                            <li><a href="classes.html" class="nav__link">Classes</a></li>
-                            <li><a href="about.html" class="nav__link">About</a></li>
-                            <li><a href="parents.html" class="nav__link">Parents</a></li>
-                            <li><a href="contact.html" class="nav__link">Contact</a></li>
+                    <li class="nav__dropdown">
+                        <button class="nav__link nav__dropdown-toggle" aria-expanded="false" aria-controls="programs-dropdown">
+                            Programs <span class="dropdown-arrow">▾</span>
+                        </button>
+                        <ul class="dropdown-menu" id="programs-dropdown">
+                            <li><a href="programs.html" class="dropdown-item">All Programs</a></li>
+                            <li><a href="programs.html#ages-5-7" class="dropdown-item">Ages 5-7</a></li>
+                            <li><a href="programs.html#ages-8-10" class="dropdown-item">Ages 8-10</a></li>
+                            <li><a href="programs.html#ages-11-12" class="dropdown-item">Ages 11-12</a></li>
                         </ul>
-                    </nav>
+                    </li>
                     
-                    <div class="cta-button">
-                        <a href="classes.html" class="btn btn--small">Join Now</a>
-                    </div>
+                    <li class="nav__dropdown">
+                        <button class="nav__link nav__dropdown-toggle" aria-expanded="false" aria-controls="classes-dropdown">
+                            Classes <span class="dropdown-arrow">▾</span>
+                        </button>
+                        <ul class="dropdown-menu" id="classes-dropdown">
+                            <li><a href="classes.html" class="dropdown-item">Class Schedule</a></li>
+                            <li><a href="classes.html#in-person" class="dropdown-item">In-Person</a></li>
+                            <li><a href="classes.html#online" class="dropdown-item">Online</a></li>
+                            <li><a href="classes.html#private" class="dropdown-item">Private Sessions</a></li>
+                        </ul>
+                    </li>
                     
-                    <button class="mobile-menu__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
-                        <span class="toggle-bar"></span>
-                        <span class="toggle-bar"></span>
-                        <span class="toggle-bar"></span>
-                    </button>
-                </div>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="parents.html" class="nav__link">Parents</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cta-button">
+                <a href="classes.html" class="btn btn--small">Join Now</a>
             </div>
-        </header>
+            
+            <button class="mobile-menu__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+            </button>
+        </div>
+    </div>
+</header>
 
        <!-- Enhanced Hero Section -->
 <section class="hero" aria-label="Welcome to HappiMinds">
