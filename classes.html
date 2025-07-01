@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>HappiMinds Classes | In-Person & Online Brain Development Programs</title>
+    <meta name="description" content="Choose from in-person, online, or private brain development classes for children 7 months to 9 years. Flexible schedules, expert instructors, and proven results.">
+    <meta name="keywords" content="child development classes, brain training for kids, online learning for children, preschool enrichment programs, cognitive development classes">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.happimind.co.in/classes.html">
+    <meta property="og:title" content="HappiMinds Classes | Whole Brain Development Programs">
+    <meta property="og:description" content="Flexible in-person and online classes to boost your child's cognitive, emotional, and social development. Ages 7 months to 9 years.">
+    <meta property="og:image" content="https://www.happimind.co.in/assets/images/classes-social.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.happimind.co.in/classes.html">
+    <meta property="twitter:title" content="HappiMinds Classes | Whole Brain Development Programs">
+    <meta property="twitter:description" content="Flexible in-person and online classes to boost your child's cognitive, emotional, and social development. Ages 7 months to 9 years.">
+    <meta property="twitter:image" content="https://www.happimind.co.in/assets/images/classes-social.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.happimind.co.in/classes.html">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" as="style">
+    <link rel="preload" href="assets/css/styles.css" as="style">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Parent-Friendly UI Enhancements */
+        .parent-friendly {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .easy-read {
+            color: var(--darker);
+            max-width: 65ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .key-info {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+            border-radius: var(--radius-sm);
+        }
+        
+        .benefit-icon {
+            color: var(--primary);
+            margin-right: var(--space-sm);
+            font-size: 1.1em;
+        }
+        
+        .age-highlight {
+            background: var(--tertiary);
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .schedule-highlight {
+            background: rgba(107, 203, 119, 0.1);
+            padding: var(--space-sm);
+            border-radius: var(--radius-sm);
+            margin: var(--space-md) 0;
+        }
+        
+        /* Tab System */
+        .tab-system {
+            margin: var(--space-xl) 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+            flex-wrap: wrap;
+            background: var(--light);
+            padding: var(--space-xs);
+            border-radius: var(--radius-md);
+        }
+        
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Schedule Table */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-md) 0;
+        }
+        
+        .schedule-table th {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: var(--space-sm);
+            text-align: left;
+        }
+        
+        .schedule-table td {
+            padding: var(--space-sm);
+            border-bottom: 1px solid var(--gray-light);
+            vertical-align: middle;
+        }
+        
+        .schedule-table tr:hover {
+            background: var(--light);
+        }
+        
+        .class-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .badge-in-person {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+        
+        .badge-online {
+            background: rgba(93, 155, 236, 0.1);
+            color: var(--secondary);
+        }
+        
+        /* Pricing Cards */
+        .pricing-card {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: var(--space-sm) 0;
+        }
+        
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: var(--space-md) 0;
+            padding: 0;
+            flex-grow: 1;
+        }
+        
+        .pricing-features li {
+            position: relative;
+            padding-left: var(--space-lg);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Steps */
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius-full);
+            font-weight: bold;
+            margin-right: var(--space-sm);
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+        
+        .step h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .parent-friendly {
+                font-size: 1rem;
+            }
+            
+            .tab-buttons {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                width: 100%;
+            }
+            
+            .schedule-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="classes-page">
+    <!-- Skip to content link for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    
+    <div id="page" class="site">
+        <!-- Header Section -->
+        <header id="site-header" class="header">
+            <div class="container">
+                <div class="header__container">
+                    <a href="index.html" class="logo" aria-label="HappiMinds Home">
+                        <img src="assets/images/logo.svg" alt="HappiMinds - Whole Brain Development for Kids" width="180" height="60" loading="eager">
+                        <span class="logo-mascot">😊</span>
+                    </a>
+                    
+                    <nav class="nav" aria-label="Main navigation">
+                        <ul class="nav__list">
+                            <li><a href="index.html" class="nav__link">Home</a></li>
+                            
+                            <li class="nav__dropdown">
+                                <button class="nav__link nav__dropdown-toggle" aria-expanded="false" aria-controls="programs-dropdown">
+                                    Programs <span class="dropdown-arrow">▾</span>
+                                </button>
+                                <ul class="dropdown-menu" id="programs-dropdown">
+                                    <li><a href="programs.html" class="dropdown-item">All Programs</a></li>
+                                    <li><a href="programs.html#infants" class="dropdown-item">0.7-2 Years</a></li>
+                                    <li><a href="programs.html#toddlers" class="dropdown-item">2-4 Years</a></li>
+                                    <li><a href="programs.html#preschoolers" class="dropdown-item">4-6 Years</a></li>
+                                    <li><a href="programs.html#school-age" class="dropdown-item">6-9 Years</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="nav__dropdown">
+                                <button class="nav__link nav__dropdown-toggle active" aria-expanded="false" aria-controls="classes-dropdown">
+                                    Classes <span class="dropdown-arrow">▾</span>
+                                </button>
+                                <ul class="dropdown-menu" id="classes-dropdown">
+                                    <li><a href="classes.html" class="dropdown-item">Class Schedule</a></li>
+                                    <li><a href="classes.html#in-person" class="dropdown-item">In-Person</a></li>
+                                    <li><a href="classes.html#online" class="dropdown-item">Online</a></li>
+                                    <li><a href="classes.html#private" class="dropdown-item">Private Sessions</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li><a href="about.html" class="nav__link">About</a></li>
+                            <li><a href="parents.html" class="nav__link">Parents</a></li>
+                            <li><a href="contact.html" class="nav__link">Contact</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="cta-button">
+                        <a href="classes.html" class="btn btn--small">Join Now</a>
+                    </div>
+                    
+                    <button class="mobile-menu__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+                        <span class="toggle-bar"></span>
+                        <span class="toggle-bar"></span>
+                        <span class="toggle-bar"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <!-- Classes Hero Section -->
+            <section class="classes-hero hero" aria-labelledby="classes-hero-heading">
+                <div class="container">
+                    <div class="hero__content">
+                        <div class="hero__text parent-friendly">
+                            <h1 id="classes-hero-heading">
+                                <span class="hero__title-line hero__title-line--primary">Brain-Building Classes</span>
+                                <span class="hero__title-line hero__title-line--accent">That Fit Your Family's Life</span>
+                            </h1>
+                            
+                            <p class="hero__subtitle easy-read">
+                                Designed for busy parents, our flexible class options help your child develop cognitive skills, emotional intelligence, and social abilities - whether at our center or from home.
+                            </p>
+                            
+                            <div class="key-info">
+                                <p><i class="fas fa-check-circle benefit-icon"></i> <strong>Small class sizes</strong> (max 6 children) for personalized attention</p>
+                                <p><i class="fas fa-check-circle benefit-icon"></i> <strong>Expert instructors</strong> trained in child development</p>
+                                <p><i class="fas fa-check-circle benefit-icon"></i> <strong>Proven curriculum</strong> backed by neuroscience research</p>
+                            </div>
+                            
+                            <div class="hero__buttons">
+                                <a href="#schedule" class="btn btn--primary">
+                                    <span class="btn__icon">📅</span>
+                                    <span class="btn__text">View Class Times</span>
+                                </a>
+                                
+                                <a href="contact.html" class="btn btn--secondary">
+                                    <span class="btn__icon">👪</span>
+                                    <span class="btn__text">Book Free Trial</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="hero__image">
+                            <div class="hero__image-wrapper">
+                                <img src="assets/images/classes-hero.jpg" 
+                                     srcset="assets/images/classes-hero-400.jpg 400w, assets/images/classes-hero-600.jpg 600w, assets/images/classes-hero-800.jpg 800w"
+                                     sizes="(max-width: 600px) 400px, (max-width: 900px) 600px, 800px"
+                                     alt="Happy children engaged in brain development activities with a teacher" 
+                                     width="600" 
+                                     height="500" 
+                                     loading="eager">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Class Options Section -->
+            <section class="why-choose-section" aria-labelledby="options-heading">
+                <div class="container parent-friendly">
+                    <div class="section-header">
+                        <h2 id="options-heading">Choose Your Perfect Learning Format</h2>
+                        <p class="section-subtitle">Each option delivers our complete brain development curriculum in the way that works best for your family</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div id="in-person" class="feature-card class-option">
+                            <div class="feature-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <h3>In-Person Classes</h3>
+                            <p class="easy-read">Experience our engaging curriculum in our specially designed learning centers with small group sizes and hands-on materials.</p>
+                            <div class="schedule-highlight">
+                                <p><strong>Best for:</strong> Children who thrive with hands-on activities and social interaction</p>
+                                <p><strong>Age groups:</strong> <span class="age-highlight">7 months - 9 years</span></p>
+                            </div>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-child benefit-icon"></i> Small groups (max 6 children)</li>
+                                <li><i class="fas fa-hands-helping benefit-icon"></i> Hands-on learning materials</li>
+                                <li><i class="fas fa-users benefit-icon"></i> Social skill development</li>
+                                <li><i class="fas fa-chalkboard-teacher benefit-icon"></i> Immediate teacher feedback</li>
+                            </ul>
+                            <a href="#in-person-schedule" class="btn btn--small btn--primary">See In-Person Schedule</a>
+                        </div>
+                        
+                        <div id="online" class="feature-card class-option">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h3>Online Classes</h3>
+                            <p class="easy-read">Interactive live sessions with our expert instructors from the comfort of your home, with materials shipped to you.</p>
+                            <div class="schedule-highlight">
+                                <p><strong>Best for:</strong> Busy families or those outside our local area</p>
+                                <p><strong>Age groups:</strong> <span class="age-highlight">2 years - 9 years</span></p>
+                            </div>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-home benefit-icon"></i> Learn from anywhere</li>
+                                <li><i class="fas fa-shipping-fast benefit-icon"></i> Materials delivered to you</li>
+                                <li><i class="fas fa-video benefit-icon"></i> Session recordings available</li>
+                                <li><i class="fas fa-clock benefit-icon"></i> Flexible make-up options</li>
+                            </ul>
+                            <a href="#online-schedule" class="btn btn--small btn--secondary">See Online Schedule</a>
+                        </div>
+                        
+                        <div id="private" class="feature-card class-option">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3>Private Sessions</h3>
+                            <p class="easy-read">One-on-one customized learning with our expert instructors, tailored to your child's specific needs and schedule.</p>
+                            <div class="schedule-highlight">
+                                <p><strong>Best for:</strong> Children needing personalized attention or special scheduling</p>
+                                <p><strong>Age groups:</strong> <span class="age-highlight">All ages</span></p>
+                            </div>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-user-edit benefit-icon"></i> Personalized curriculum</li>
+                                <li><i class="fas fa-calendar-alt benefit-icon"></i> Flexible scheduling</li>
+                                <li><i class="fas fa-bullseye benefit-icon"></i> Targeted skill development</li>
+                                <li><i class="fas fa-chart-line benefit-icon"></i> Accelerated progress</li>
+                            </ul>
+                            <a href="#private-options" class="btn btn--small btn--accent">Learn About Private Sessions</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Class Schedule Section -->
+            <section id="schedule" class="highlights-section" aria-labelledby="schedule-heading">
+                <div class="container parent-friendly">
+                    <div class="section-header">
+                        <h2 id="schedule-heading">Current Class Schedule</h2>
+                        <p class="section-subtitle">January 1 - March 31, 2025 term | <a href="contact.html">Need different times?</a></p>
+                    </div>
+                    
+                    <div class="tab-system">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="all">All Classes</button>
+                            <button class="tab-btn" data-tab="in-person">In-Person</button>
+                            <button class="tab-btn" data-tab="online">Online</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="all-schedule">
+                            <div class="table-responsive">
+                                <table class="schedule-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Program</th>
+                                            <th>Age Group</th>
+                                            <th>Format</th>
+                                            <th>Days</th>
+                                            <th>Time</th>
+                                            <th>Location</th>
+                                            <th>Spots</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Little Explorers</td>
+                                            <td>0.7-2 Years</td>
+                                            <td><span class="class-badge badge-in-person">In-Person</span></td>
+                                            <td>Mon & Wed</td>
+                                            <td>9:00 - 9:45 AM</td>
+                                            <td>Main Center</td>
+                                            <td><span class="spots-available">3 left</span></td>
+                                            <td><a href="contact.html?class=LE-MW9" class="btn btn--small btn--primary">Enroll</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Curious Minds</td>
+                                            <td>2-4 Years</td>
+                                            <td><span class="class-badge badge-in-person">In-Person</span></td>
+                                            <td>Tue & Thu</td>
+                                            <td>10:00 - 10:50 AM</td>
+                                            <td>Main Center</td>
+                                            <td><span class="spots-waitlist">Waitlist</span></td>
+                                            <td><a href="contact.html?class=CM-TT10" class="btn btn--small btn--secondary">Join Waitlist</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Creative Thinkers</td>
+                                            <td>4-6 Years</td>
+                                            <td><span class="class-badge badge-online">Online</span></td>
+                                            <td>Mon & Wed</td>
+                                            <td>4:00 - 4:55 PM</td>
+                                            <td>Zoom</td>
+                                            <td><span class="spots-available">5 left</span></td>
+                                            <td><a href="contact.html?class=CT-MW4" class="btn btn--small btn--primary">Enroll</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Young Achievers</td>
+                                            <td>6-9 Years</td>
+                                            <td><span class="class-badge badge-online">Online</span></td>
+                                            <td>Tue & Thu</td>
+                                            <td>5:00 - 6:00 PM</td>
+                                            <td>Zoom</td>
+                                            <td><span class="spots-available">2 left</span></td>
+                                            <td><a href="contact.html?class=YA-TT5" class="btn btn--small btn--primary">Enroll</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Little Explorers</td>
+                                            <td>0.7-2 Years</td>
+                                            <td><span class="class-badge badge-online">Online</span></td>
+                                            <td>Sat</td>
+                                            <td>10:00 - 10:45 AM</td>
+                                            <td>Zoom</td>
+                                            <td><span class="spots-available">Open</span></td>
+                                            <td><a href="contact.html?class=LE-S10" class="btn btn--small btn--primary">Enroll</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Curious Minds</td>
+                                            <td>2-4 Years</td>
+                                            <td><span class="class-badge badge-in-person">In-Person</span></td>
+                                            <td>Sat</td>
+                                            <td>11:00 - 11:50 AM</td>
+                                            <td>Main Center</td>
+                                            <td><span class="spots-available">1 left</span></td>
+                                            <td><a href="contact.html?class=CM-S11" class="btn btn--small btn--primary">Enroll</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="in-person-schedule">
+                            <!-- In-person only schedule would go here -->
+                            <p class="text-center">No in-person classes currently available. <a href="contact.html">Contact us</a> to be notified when new sessions are added.</p>
+                        </div>
+                        
+                        <div class="tab-content" id="online-schedule">
+                            <!-- Online only schedule would go here -->
+                            <p class="text-center">No online classes currently available. <a href="contact.html">Contact us</a> to be notified when new sessions are added.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="key-info" style="margin-top: var(--space-xl);">
+                        <h3>Don't See a Time That Works?</h3>
+                        <p>We frequently add new class times based on demand. <a href="contact.html">Contact us</a> to request specific days/times or to be notified when new sessions are added.</p>
+                        <p><i class="fas fa-phone benefit-icon"></i> Call for scheduling help: <a href="tel:+917801999665">+91 7801999665</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="age-section" aria-labelledby="pricing-heading">
+                <div class="container parent-friendly">
+                    <div class="section-header">
+                        <h2 id="pricing-heading">Simple, Transparent Pricing</h2>
+                        <p class="section-subtitle">Quality brain development within your family's budget</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card pricing-card">
+                            <h3>In-Person Classes</h3>
+                            <div class="price">₹8,000<span>/month</span></div>
+                            <p class="easy-read">Twice weekly 45-60 minute sessions</p>
+                            <ul class="pricing-features">
+                                <li>All materials included</li>
+                                <li>Progress reports every 4 weeks</li>
+                                <li>Parent resource portal access</li>
+                                <li>Make-up class options</li>
+                                <li>Sibling discount available</li>
+                            </ul>
+                            <a href="contact.html?interest=in-person" class="btn btn--primary">Enroll Now</a>
+                        </div>
+                        
+                        <div class="feature-card pricing-card">
+                            <h3>Online Classes</h3>
+                            <div class="price">₹6,500<span>/month</span></div>
+                            <p class="easy-read">Twice weekly 45-55 minute live sessions</p>
+                            <ul class="pricing-features">
+                                <li>Activity kit shipped monthly</li>
+                                <li>Session recordings available</li>
+                                <li>Parent resource portal access</li>
+                                <li>Flexible rescheduling</li>
+                                <li>Sibling discount available</li>
+                            </ul>
+                            <a href="contact.html?interest=online" class="btn btn--secondary">Enroll Now</a>
+                        </div>
+                        
+                        <div id="private-options" class="feature-card pricing-card">
+                            <h3>Private Sessions</h3>
+                            <div class="price">₹1,500<span>/session</span></div>
+                            <p class="easy-read">Customized 1:1 instruction</p>
+                            <ul class="pricing-features">
+                                <li>Personalized curriculum</li>
+                                <li>Schedule at your convenience</li>
+                                <li>Choose location (home/center)</li>
+                                <li>Package discounts available</li>
+                                <li>Progress tracking included</li>
+                            </ul>
+                            <a href="contact.html?interest=private" class="btn btn--accent">Book Consultation</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-outcome" style="margin-top: var(--space-xl); text-align: center;">
+                        <h3>Flexible Payment Options</h3>
+                        <div class="easy-read">
+                            <p>We believe every child deserves quality brain development. Ask about:</p>
+                            <ul style="list-style-type: none; padding: 0;">
+                                <li><i class="fas fa-percentage benefit-icon"></i> <strong>Sibling discounts</strong> (10% off for each additional child)</li>
+                                <li><i class="fas fa-calendar-alt benefit-icon"></i> <strong>Term packages</strong> (save 15% when you pay upfront)</li>
+                                <li><i class="fas fa-rupee-sign benefit-icon"></i> <strong>Need-based scholarships</strong> for qualifying families</li>
+                                <li><i class="fas fa-credit-card benefit-icon"></i> <strong>Monthly payment plans</strong> available</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html?topic=payment" class="btn btn--primary">Discuss Payment Options</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Enroll Section -->
+            <section class="story-section" aria-labelledby="enroll-heading">
+                <div class="container parent-friendly">
+                    <div class="story-content">
+                        <h2 id="enroll-heading">Simple 3-Step Enrollment</h2>
+                        
+                        <div class="steps-grid">
+                            <div class="step">
+                                <h3><span class="step-number">1</span> Free Assessment</h3>
+                                <p class="easy-read">We'll evaluate your child's development and recommend the perfect program fit.</p>
+                            </div>
+                            <div class="step">
+                                <h3><span class="step-number">2</span> Choose Your Format</h3>
+                                <p class="easy-read">Select in-person, online, or private sessions that match your schedule.</p>
+                            </div>
+                            <div class="step">
+                                <h3><span class="step-number">3</span> Start Learning</h3>
+                                <p class="easy-read">Complete registration and begin your child's brain development journey!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-box" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                            <h3>Ready to Begin?</h3>
+                            <p class="easy-read">Join hundreds of families who've seen remarkable growth in their children's cognitive abilities, emotional intelligence, and social skills through our programs.</p>
+                            <div class="cta-buttons" style="justify-content: center; margin-top: var(--space-lg);">
+                                <a href="contact.html" class="btn btn--primary">
+                                    <i class="fas fa-calendar-check btn__icon"></i> Book Free Assessment
+                                </a>
+                                <a href="tel:+917801999665" class="btn btn--secondary">
+                                    <i class="fas fa-phone btn__icon"></i> Call to Enroll
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonial Section -->
+            <section class="testimonials-section" aria-labelledby="testimonials-heading">
+                <div class="container parent-friendly">
+                    <div class="section-header">
+                        <h2 id="testimonials-heading">Parents Love Our Classes</h2>
+                    </div>
+                    
+                    <div class="testimonials-grid">
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p>"The in-person classes have been transformative for my shy 3-year-old. She's now confident making friends and her vocabulary has exploded!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="assets/images/parent1.jpg" alt="Priya M." width="50" height="50" loading="lazy">
+                                <div class="testimonial-author-info">
+                                    <h4>Priya M.</h4>
+                                    <p>Mother of 3-year-old</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p>"As working parents, the online option has been a lifesaver. The materials arrive ready-to-use and our son looks forward to every session."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="assets/images/parent2.jpg" alt="Rahul S." width="50" height="50" loading="lazy">
+                                <div class="testimonial-author-info">
+                                    <h4>Rahul S.</h4>
+                                    <p>Father of 5-year-old</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p>"The private sessions helped our daughter catch up developmentally after the pandemic. The personalized attention made all the difference."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="assets/images/parent3.jpg" alt="Ananya K." width="50" height="50" loading="lazy">
+                                <div class="testimonial-author-info">
+                                    <h4>Ananya K.</h4>
+                                    <p>Mother of 7-year-old</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-logo">
+                            <img src="assets/images/logo.svg" alt="HappiMinds - Whole Brain Development for Kids" width="180" height="60" loading="lazy">
+                        </a>
+                        <p class="footer-about">Whole Brain Development Program combining scientific techniques with fun activities to stimulate both left and right brain.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="classes.html">Classes</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="parents.html">Parents</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3>Programs</h3>
+                        <ul>
+                            <li><a href="programs.html#infants">0.7-2 Years</a></li>
+                            <li><a href="programs.html#toddlers">2-4 Years</a></li>
+                            <li><a href="programs.html#preschoolers">4-6 Years</a></li>
+                            <li><a href="programs.html#school-age">6-9 Years</a></li>
+                            <li><a href="parents.html">Parent Workshops</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3>Contact Us</h3>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt"></i> 123 Anywhere St., Any City</p>
+                            <p><i class="fas fa-phone"></i> <a href="tel:+917801999665">+91 7801999665</a></p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:info@happimind.co.in">info@happimind.co.in</a></p>
+                            <p><i class="fas fa-globe"></i> <a href="http://www.happimind.co.in" target="_blank">www.happimind.co.in</a></p>
+                        </address>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 HappiMinds. All Rights Reserved.</p>
+                    <div class="footer-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js" defer></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons and content
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId + '-schedule').classList.add('active');
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
