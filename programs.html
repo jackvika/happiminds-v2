@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="HappiMinds age-specific programs for children 7 months to 9 years. Discover our whole brain development curriculum for each age group.">
+    <meta name="keywords" content="child brain development programs, early childhood education, toddler learning programs, preschool brain activities, school-age cognitive development">
+    <meta name="author" content="HappiMinds">
+    
+    <title>HappiMinds Programs | Age-Specific Brain Development</title>
+ 
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" as="style">
+    <link rel="preload" href="assets/css/styles.css" as="style">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Additional CSS for enhanced design */
+        .program-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--primary-light);
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        #infants .program-card::before { background: var(--primary); }
+        #toddlers .program-card::before { background: var(--secondary); }
+        #preschoolers .program-card::before { background: var(--accent); }
+        #school-age .program-card::before { background: var(--tertiary); }
+
+        .age-badge {
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            z-index: 2;
+        }
+
+        .program-tagline {
+            font-weight: 600;
+            position: relative;
+            padding: var(--space-sm);
+            background: var(--primary-light);
+            border-radius: var(--radius-sm);
+            display: inline-block;
+        }
+
+        .highlight-item {
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        #toddlers .highlight-item { border-color: var(--secondary); }
+        #preschoolers .highlight-item { border-color: var(--accent); }
+        #school-age .highlight-item { border-color: var(--tertiary); }
+
+        .comparison-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-full);
+            margin: 0 auto var(--space-sm);
+        }
+
+        .comparison-card {
+            border-top: 4px solid var(--primary);
+        }
+
+        .comparison-card:nth-child(2) {
+            border-color: var(--secondary);
+        }
+
+        .comparison-card:nth-child(3) {
+            border-color: var(--accent);
+        }
+
+        .comparison-card:nth-child(4) {
+            border-color: var(--tertiary);
+        }
+
+        @media (max-width: 768px) {
+            .program-nav ul {
+                justify-content: space-between;
+                padding: var(--space-xs) 0;
+            }
+        
+            .program-nav__link {
+                padding: var(--space-xs);
+                font-size: 0.875rem;
+            }
+            
+            .program-card {
+                padding: var(--space-lg);
+            }
+        }
+
+        /* Hero enhancements */
+        .programs-hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .programs-hero__content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero__bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%236BCB77" opacity="0.1"><circle cx="25" cy="25" r="4"/><circle cx="75" cy="15" r="3"/><circle cx="15" cy="75" r="5"/><circle cx="85" cy="65" r="2"/><circle cx="50" cy="50" r="3"/></svg>');
+            background-size: 200px 200px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-50px) translateX(50px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+    </style>
+</head>
+
+<body class="programs-page">
+    <!-- Skip to content link for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    
+    <div id="page" class="site">
+        <!-- Header Section -->
+        <header id="site-header" class="header">
+            <div class="container">
+                <div class="header__container">
+                    <a href="index.html" class="logo" aria-label="HappiMinds Home">
+                        <img src="assets/images/logo.svg" alt="HappiMinds - Whole Brain Development for Kids" width="180" height="60" loading="eager">
+                        <span class="logo-mascot">😊</span>
+                    </a>
+                    
+                    <nav class="nav" aria-label="Main navigation">
+                        <ul class="nav__list">
+                            <li><a href="index.html" class="nav__link">Home</a></li>
+                            
+                            <li class="nav__dropdown">
+                                <button class="nav__link nav__dropdown-toggle active" aria-expanded="false" aria-controls="programs-dropdown">
+                                    Programs <span class="dropdown-arrow">▾</span>
+                                </button>
+                                <ul class="dropdown-menu" id="programs-dropdown">
+                                    <li><a href="programs.html" class="dropdown-item">All Programs</a></li>
+                                    <li><a href="programs.html#infants" class="dropdown-item">0.7-2 Years</a></li>
+                                    <li><a href="programs.html#toddlers" class="dropdown-item">2-4 Years</a></li>
+                                    <li><a href="programs.html#preschoolers" class="dropdown-item">4-6 Years</a></li>
+                                    <li><a href="programs.html#school-age" class="dropdown-item">6-9 Years</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="nav__dropdown">
+                                <button class="nav__link nav__dropdown-toggle" aria-expanded="false" aria-controls="classes-dropdown">
+                                    Classes <span class="dropdown-arrow">▾</span>
+                                </button>
+                                <ul class="dropdown-menu" id="classes-dropdown">
+                                    <li><a href="classes.html" class="dropdown-item">Class Schedule</a></li>
+                                    <li><a href="classes.html#in-person" class="dropdown-item">In-Person</a></li>
+                                    <li><a href="classes.html#online" class="dropdown-item">Online</a></li>
+                                    <li><a href="classes.html#private" class="dropdown-item">Private Sessions</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li><a href="about.html" class="nav__link">About</a></li>
+                            <li><a href="parents.html" class="nav__link">Parents</a></li>
+                            <li><a href="contact.html" class="nav__link">Contact</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="cta-button">
+                        <a href="classes.html" class="btn btn--small">Join Now</a>
+                    </div>
+                    
+                    <button class="mobile-menu__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+                        <span class="toggle-bar"></span>
+                        <span class="toggle-bar"></span>
+                        <span class="toggle-bar"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <!-- Programs Hero Section -->
+            <section class="programs-hero" aria-labelledby="programs-hero-heading">
+                <div class="container">
+                    <div class="programs-hero__content">
+                        <h1 id="programs-hero-heading">Age-Specific Brain Development Programs</h1>
+                        <p class="subtitle">Scientifically designed to nurture your child's growing mind at every stage from infancy to elementary years</p>
+                        <div class="hero__buttons">
+                            <a href="#comparison" class="btn btn--primary">Compare Programs</a>
+                            <a href="contact.html" class="btn btn--secondary">Free Consultation</a>
+                        </div>
+                        <div class="scroll-indicator">
+                            <span>Explore Age Groups</span>
+                            <div class="arrow-down"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__background">
+                    <div class="hero__bubbles"></div>
+                </div>
+            </section>
+
+            <!-- Program Navigation -->
+            <nav class="program-nav" aria-label="Program navigation">
+                <div class="container">
+                    <ul>
+                        <li><a href="#infants" class="program-nav__link">
+                            <i class="fas fa-baby"></i> Infants (0.7-2)
+                        </a></li>
+                        <li><a href="#toddlers" class="program-nav__link">
+                            <i class="fas fa-child"></i> Toddlers (2-4)
+                        </a></li>
+                        <li><a href="#preschoolers" class="program-nav__link">
+                            <i class="fas fa-puzzle-piece"></i> Preschoolers (4-6)
+                        </a></li>
+                        <li><a href="#school-age" class="program-nav__link">
+                            <i class="fas fa-graduation-cap"></i> School Age (6-9)
+                        </a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Infants Program -->
+            <section id="infants" class="program-section" aria-labelledby="infants-heading">
+                <div class="container">
+                    <div class="program-card">
+                        <div class="program-card__header">
+                            <div class="age-badge">0.7-2 Years</div>
+                            <h2 id="infants-heading">Little Explorers Program</h2>
+                            <p class="program-tagline">Foundational brain stimulation through sensory play and bonding</p>
+                        </div>
+                        
+                       <!-- Program Highlights Section 1 -->
+<div class="program-highlights">
+  <div class="highlight-item">
+    <div class="highlight-icon">🧠</div>
+    <h3 class="highlight-title">Brain Development Focus</h3>
+    <div class="highlight-content">
+      <p>Sensory integration, neural connection building, early language exposure</p>
+    </div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-icon">👪</div>
+    <h3 class="highlight-title">Parent Role</h3>
+    <div class="highlight-content">
+      <p>Active participation in all activities to strengthen bonding</p>
+    </div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-icon">⏱️</div>
+    <h3 class="highlight-title">Session Details</h3>
+    <div class="highlight-content">
+      <p>45-minute sessions, 2x/week, parent-child format</p>
+    </div>
+  </div>
+</div>
+                        
+                        <div class="program-details-grid">
+                            <div class="detail-card">
+                                <h3>Key Benefits</h3>
+                                <ul class="benefits-list">
+                                    <li>Enhanced sensory processing</li>
+                                    <li>Early language foundations</li>
+                                    <li>Motor skill development</li>
+                                    <li>Secure attachment formation</li>
+                                    <li>Emotional regulation beginnings</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Sample Activities</h3>
+                                <ul class="activities-list">
+                                    <li>Sensory texture exploration</li>
+                                    <li>Gentle baby yoga movements</li>
+                                    <li>Rhythmic language exposure</li>
+                                    <li>Visual tracking exercises</li>
+                                    <li>Bonding touch activities</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Developmental Milestones</h3>
+                                <ul class="milestones-list">
+                                    <li>Object permanence understanding</li>
+                                    <li>Cause-effect recognition</li>
+                                    <li>Basic communication signals</li>
+                                    <li>Body awareness development</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="program-outcome">
+                            <h3>Expected Outcomes</h3>
+                            <p>Parents will notice increased alertness, better sleep patterns, improved sensory tolerance, and early communication attempts. Babies develop stronger neural pathways that form the foundation for all future learning.</p>
+                        </div>
+                        
+                        <div class="program-cta">
+                            <a href="contact.html" class="btn btn--primary">Book Free Assessment</a>
+                            <a href="classes.html#infants" class="btn btn--secondary">See Class Options</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Toddlers Program -->
+            <section id="toddlers" class="program-section" aria-labelledby="toddlers-heading">
+                <div class="container">
+                    <div class="program-card">
+                        <div class="program-card__header">
+                            <div class="age-badge">2-4 Years</div>
+                            <h2 id="toddlers-heading">Curious Minds Program</h2>
+                            <p class="program-tagline">Channeling natural curiosity into structured learning experiences</p>
+                        </div>
+                        
+                        <!-- Program Highlights Section 2 -->
+<div class="program-highlights">
+  <div class="highlight-item">
+    <div class="highlight-icon">🗣️</div>
+    <h3 class="highlight-title">Brain Development Focus</h3>
+    <div class="highlight-content">
+      <p>Language explosion, emotional awareness, problem-solving foundations</p>
+    </div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-icon">👪</div>
+    <h3 class="highlight-title">Parent Role</h3>
+    <div class="highlight-content">
+      <p>Guided participation with gradual independence</p>
+    </div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-icon">⏱️</div>
+    <h3 class="highlight-title">Session Details</h3>
+    <div class="highlight-content">
+      <p>50-minute sessions, 2x/week, transition to independent participation</p>
+    </div>
+  </div>
+</div>
+
+                        <div class="program-details-grid">
+                            <div class="detail-card">
+                                <h3>Key Benefits</h3>
+                                <ul class="benefits-list">
+                                    <li>Expanded vocabulary and communication</li>
+                                    <li>Emotional vocabulary development</li>
+                                    <li>Fine and gross motor coordination</li>
+                                    <li>Early problem-solving skills</li>
+                                    <li>Social interaction foundations</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Sample Activities</h3>
+                                <ul class="activities-list">
+                                    <li>Interactive storytelling</li>
+                                    <li>Simple puzzle challenges</li>
+                                    <li>Emotion identification games</li>
+                                    <li>Movement coordination exercises</li>
+                                    <li>Sensory integration activities</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Developmental Milestones</h3>
+                                <ul class="milestones-list">
+                                    <li>Following 2-3 step instructions</li>
+                                    <li>Expressing needs with words</li>
+                                    <li>Parallel play transitioning to interactive play</li>
+                                    <li>Basic emotional regulation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="program-outcome">
+                            <h3>Expected Outcomes</h3>
+                            <p>Toddlers show improved communication skills, better emotional expression, increased focus during activities, and growing independence. Parents report smoother transitions and fewer frustration episodes.</p>
+                        </div>
+                        
+                        <div class="program-cta">
+                            <a href="contact.html" class="btn btn--primary">Book Free Assessment</a>
+                            <a href="classes.html#toddlers" class="btn btn--secondary">See Class Options</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preschoolers Program -->
+            <section id="preschoolers" class="program-section" aria-labelledby="preschoolers-heading">
+                <div class="container">
+                    <div class="program-card">
+                        <div class="program-card__header">
+                            <div class="age-badge">4-6 Years</div>
+                            <h2 id="preschoolers-heading">Creative Thinkers Program</h2>
+                            <p class="program-tagline">Balancing cognitive development with creativity and social skills</p>
+                        </div>
+                        
+                        <!-- Program Highlights Section 3 -->
+<div class="program-highlights">
+  <div class="highlight-item">
+    <div class="highlight-icon">🎨</div>
+    <h3 class="highlight-title">Brain Development Focus</h3>
+    <div class="highlight-content">
+      <p>Cognitive flexibility, creative expression, social-emotional intelligence</p>
+    </div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-icon">👪</div>
+    <h3 class="highlight-title">Parent Role</h3>
+    <div class="highlight-content">
+      <p>Observation with guided home practice</p>
+    </div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-icon">⏱️</div>
+    <h3 class="highlight-title">Session Details</h3>
+    <div class="highlight-content">
+      <p>55-minute sessions, 2x/week, independent participation</p>
+    </div>
+  </div>
+</div>
+                        
+                        <div class="program-details-grid">
+                            <div class="detail-card">
+                                <h3>Key Benefits</h3>
+                                <ul class="benefits-list">
+                                    <li>Enhanced focus and concentration</li>
+                                    <li>Creative problem-solving skills</li>
+                                    <li>Cooperative play abilities</li>
+                                    <li>Early literacy and numeracy foundations</li>
+                                    <li>Emotional intelligence development</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Sample Activities</h3>
+                                <ul class="activities-list">
+                                    <li>Story creation and dramatization</li>
+                                    <li>Pattern recognition games</li>
+                                    <li>Group problem-solving challenges</li>
+                                    <li>Mindfulness and breathing exercises</li>
+                                    <li>Creative expression through multiple media</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Developmental Milestones</h3>
+                                <ul class="milestones-list">
+                                    <li>Sustained focus for 15-20 minutes</li>
+                                    <li>Emergent reading readiness</li>
+                                    <li>Cooperative group participation</li>
+                                    <li>Complex emotional understanding</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="program-outcome">
+                            <h3>Expected Outcomes</h3>
+                            <p>Children demonstrate improved school readiness, better emotional regulation, creative approaches to challenges, and positive social interactions. Teachers often report these students transition smoothly to formal schooling.</p>
+                        </div>
+                        
+                        <div class="program-cta">
+                            <a href="contact.html" class="btn btn--primary">Book Free Assessment</a>
+                            <a href="classes.html#preschoolers" class="btn btn--secondary">See Class Options</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- School Age Program -->
+            <section id="school-age" class="program-section" aria-labelledby="school-age-heading">
+                <div class="container">
+                    <div class="program-card">
+                        <div class="program-card__header">
+                            <div class="age-badge">6-9 Years</div>
+                            <h2 id="school-age-heading">Young Achievers Program</h2>
+                            <p class="program-tagline">Advanced cognitive abilities for academic and personal success</p>
+                        </div>
+                        
+                        <!-- Program Highlights Section 4 -->
+<div class="program-highlights">
+  <div class="highlight-item">
+    <div class="highlight-icon">🧠</div>
+    <h3 class="highlight-title">Brain Development Focus</h3>
+    <div class="highlight-content">
+      <p>Critical thinking, memory techniques, learning strategies, emotional resilience</p>
+    </div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-icon">👪</div>
+    <h3 class="highlight-title">Parent Role</h3>
+    <div class="highlight-content">
+      <p>Supportive reinforcement at home</p>
+    </div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-icon">⏱️</div>
+    <h3 class="highlight-title">Session Details</h3>
+    <div class="highlight-content">
+      <p>60-minute sessions, 2x/week, fully independent participation</p>
+    </div>
+  </div>
+</div>
+                        
+                        <div class="program-details-grid">
+                            <div class="detail-card">
+                                <h3>Key Benefits</h3>
+                                <ul class="benefits-list">
+                                    <li>Enhanced memory and recall</li>
+                                    <li>Effective learning strategies</li>
+                                    <li>Advanced problem-solving skills</li>
+                                    <li>Emotional resilience</li>
+                                    <li>Creative-analytical balance</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Sample Activities</h3>
+                                <ul class="activities-list">
+                                    <li>Memory palace techniques</li>
+                                    <li>Critical thinking exercises</li>
+                                    <li>Mind mapping for learning</li>
+                                    <li>Emotional intelligence scenarios</li>
+                                    <li>Creative solution brainstorming</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Developmental Milestones</h3>
+                                <ul class="milestones-list">
+                                    <li>Abstract thinking development</li>
+                                    <li>Metacognition (thinking about thinking)</li>
+                                    <li>Advanced emotional regulation</li>
+                                    <li>Independent learning strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="program-outcome">
+                            <h3>Expected Outcomes</h3>
+                            <p>Students show improved academic performance, better organizational skills, increased confidence in learning, and resilience in facing challenges. Parents report reduced homework struggles and more independent learning.</p>
+                        </div>
+                        
+                        <div class="program-cta">
+                            <a href="contact.html" class="btn btn--primary">Book Free Assessment</a>
+                            <a href="classes.html#school-age" class="btn btn--secondary">See Class Options</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Program Comparison -->
+            <section class="comparison-section" aria-labelledby="comparison-heading">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 id="comparison-heading">Find Your Child's Perfect Program</h2>
+                        <p class="section-subtitle">Our age-specific approach ensures optimal brain development at every stage</p>
+                    </div>
+                    
+                    <div class="comparison-cards">
+                        <div class="comparison-card">
+                            <div class="comparison-icon">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <h3>Little Explorers (0.7-2)</h3>
+                            <div class="comparison-highlight">
+                                <span>Focus:</span> Sensory & Bonding
+                            </div>
+                            <ul>
+                                <li>Parent-child sessions</li>
+                                <li>45 minutes, 2x/week</li>
+                                <li>Builds neural foundations</li>
+                                <li>Develops sensory processing</li>
+                            </ul>
+                            <a href="#infants" class="btn btn--small">Details</a>
+                        </div>
+                        
+                        <div class="comparison-card">
+                            <div class="comparison-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h3>Curious Minds (2-4)</h3>
+                            <div class="comparison-highlight">
+                                <span>Focus:</span> Language & Movement
+                            </div>
+                            <ul>
+                                <li>Transition to independence</li>
+                                <li>50 minutes, 2x/week</li>
+                                <li>Enhances communication</li>
+                                <li>Develops emotional awareness</li>
+                            </ul>
+                            <a href="#toddlers" class="btn btn--small">Details</a>
+                        </div>
+                        
+                        <div class="comparison-card">
+                            <div class="comparison-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <h3>Creative Thinkers (4-6)</h3>
+                            <div class="comparison-highlight">
+                                <span>Focus:</span> Cognitive & Social
+                            </div>
+                            <ul>
+                                <li>Independent participation</li>
+                                <li>55 minutes, 2x/week</li>
+                                <li>Boosts school readiness</li>
+                                <li>Develops problem-solving</li>
+                            </ul>
+                            <a href="#preschoolers" class="btn btn--small">Details</a>
+                        </div>
+                        
+                        <div class="comparison-card">
+                            <div class="comparison-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Young Achievers (6-9)</h3>
+                            <div class="comparison-highlight">
+                                <span>Focus:</span> Academic & Emotional
+                            </div>
+                            <ul>
+                                <li>Fully independent</li>
+                                <li>60 minutes, 2x/week</li>
+                                <li>Enhances learning skills</li>
+                                <li>Builds resilience</li>
+                            </ul>
+                            <a href="#school-age" class="btn btn--small">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section" aria-labelledby="cta-heading">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2 id="cta-heading">Not Sure Which Program Is Right?</h2>
+                        <p>Our child development experts can help assess your child's needs and recommend the perfect program</p>
+                        <div class="cta-buttons">
+                            <a href="contact.html" class="btn btn--primary">Schedule Consultation</a>
+                            <a href="tel:+917801999665" class="btn btn--secondary">
+                                <i class="fas fa-phone"></i> Call for Advice
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-logo">
+                            <img src="assets/images/logo.svg" alt="HappiMinds - Whole Brain Development for Kids" width="180" height="60" loading="lazy">
+                        </a>
+                        <p class="footer-about">Whole Brain Development Program combining scientific techniques with fun activities to stimulate both left and right brain.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="classes.html">Classes</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="parents.html">Parents</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3>Programs</h3>
+                        <ul>
+                            <li><a href="programs.html#infants">0.7-2 Years</a></li>
+                            <li><a href="programs.html#toddlers">2-4 Years</a></li>
+                            <li><a href="programs.html#preschoolers">4-6 Years</a></li>
+                            <li><a href="programs.html#school-age">6-9 Years</a></li>
+                            <li><a href="parents.html">Parent Workshops</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3>Contact Us</h3>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt"></i> 123 Anywhere St., Any City</p>
+                            <p><i class="fas fa-phone"></i> <a href="tel:+917801999665">+91 7801999665</a></p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:info@happimind.co.in">info@happimind.co.in</a></p>
+                            <p><i class="fas fa-globe"></i> <a href="http://www.happimind.co.in" target="_blank">www.happimind.co.in</a></p>
+                        </address>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 HappiMinds. All Rights Reserved.</p>
+                    <div class="footer-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js" defer></script>
+</body>
+</html>
