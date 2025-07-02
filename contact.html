@@ -200,45 +200,55 @@
                             </div>
                         </div>
                         
-                        <div class="contact-form">
-                            <h2>Send Us a Message</h2>
-                            <form id="contactForm" action="#" method="POST">
-                                <div class="form-group">
-                                    <label for="name" class="form-label">Your Name</label>
-                                    <input type="text" id="name" name="name" class="form-control" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="email" class="form-label">Email Address</label>
-                                    <input type="email" id="email" name="email" class="form-control" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="phone" class="form-label">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" class="form-control">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="childAge" class="form-label">Child's Age</label>
-                                    <select id="childAge" name="childAge" class="form-control">
-                                        <option value="">Select Age Group</option>
-                                        <option value="0.7-2">0.7-2 Years</option>
-                                        <option value="2-4">2-4 Years</option>
-                                        <option value="4-6">4-6 Years</option>
-                                        <option value="6-9">6-9 Years</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="message" class="form-label">Your Message</label>
-                                    <textarea id="message" name="message" class="form-control" required></textarea>
-                                </div>
-                                
-                                <button type="submit" class="submit-btn">
-                                    <i class="fas fa-paper-plane"></i> Send Message
-                                </button>
-                            </form>
-                        </div>
+    <div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form id="contactForm" action="process_contact.php" method="POST">
+        <!-- Hidden honeypot field -->
+        <input type="text" name="honeypot" style="display:none !important" tabindex="-1" autocomplete="off">
+        
+        <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" required minlength="2" maxlength="100">
+            <div class="error-message" id="name-error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" required maxlength="255">
+            <div class="error-message" id="email-error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9+\-\s]{10,20}">
+            <div class="error-message" id="phone-error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="childAge" class="form-label">Child's Age</label>
+            <select id="childAge" name="childAge" class="form-control">
+                <option value="">Select Age Group</option>
+                <option value="0.7-2">0.7-2 Years</option>
+                <option value="2-4">2-4 Years</option>
+                <option value="4-6">4-6 Years</option>
+                <option value="6-9">6-9 Years</option>
+            </select>
+            <div class="error-message" id="childAge-error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea id="message" name="message" class="form-control" required minlength="10" maxlength="2000"></textarea>
+            <div class="error-message" id="message-error"></div>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        
+        <div id="form-response" class="form-response"></div>
+    </form>
+</div>
                     </div>
                 </div>
             </section>
@@ -371,43 +381,68 @@
     
     <!-- Contact Page Specific JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Form validation
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Simple validation
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const message = document.getElementById('message').value.trim();
-                    
-                    if (!name || !email || !message) {
-                        alert('Please fill in all required fields.');
-                        return;
-                    }
-                    
-                    // Here you would typically send the form data to your server
-                    // For demonstration, we'll just show a success message
-                    alert('Thank you for your message! We will get back to you soon.');
-                    contactForm.reset();
-                });
-            }
-            
-            // Mobile menu toggle (if not already in main script.js)
-            const mobileToggle = document.querySelector('.mobile-menu__toggle');
-            const nav = document.querySelector('.nav');
-            
-            if (mobileToggle && nav) {
-                mobileToggle.addEventListener('click', function() {
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    nav.classList.toggle('active');
-                    this.classList.toggle('active');
-                });
-            }
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Clear previous messages
+    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+    const responseElement = document.getElementById('form-response');
+    responseElement.textContent = '';
+    responseElement.className = 'form-response';
+    
+    // Show loading state
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
+    try {
+        const response = await fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this)
         });
-    </script>
+        
+        // First check if the response is OK (status 200-299)
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        // Check if response is JSON
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            const text = await response.text();
+            throw new Error(`Expected JSON but got: ${contentType} - ${text.substring(0, 100)}...`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            responseElement.textContent = data.message;
+            responseElement.className = 'form-response success';
+            this.reset();
+        } else {
+            // Display field-specific errors
+            if (data.errors) {
+                for (const [field, message] of Object.entries(data.errors)) {
+                    const errorElement = document.getElementById(`${field}-error`);
+                    if (errorElement) errorElement.textContent = message;
+                }
+            }
+            responseElement.textContent = data.message || 'Please correct the form errors';
+            responseElement.className = 'form-response error';
+        }
+    } catch (error) {
+        console.error('Submission error:', error);
+        responseElement.textContent = error.message.includes('Expected JSON') 
+            ? 'Server configuration error. Please contact support.'
+            : 'Network error. Please check your connection and try again.';
+        responseElement.className = 'form-response error';
+    } finally {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+    }
+});
+</script>
+</script>
 </body>
 </html>
